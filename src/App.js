@@ -11,7 +11,6 @@ import {
 } from "react-router-dom";
 
 
-//let name="lakhvinder";
 function App() {
   const [mode, setMode] = useState('light');
   const [alert, setAlert] = useState(null)
@@ -30,13 +29,13 @@ function App() {
       setMode('dark')
       document.body.style.background = 'grey'
       showAlert("dark mode has been enabled", "success")
-      document.title = ('DC-DarkMode')
+      // document.title = ('DC-DarkMode')
     }
     else {
       setMode('light')
       document.body.style.background = 'white'
       showAlert("light mode has been enabled", "success")
-      document.title = ('DC-LightMode')
+      // document.title = ('DC-LightMode')
 
     }
 
@@ -48,7 +47,7 @@ function App() {
       <Alert alert={alert} />
       <div className='container my-3'>
         <Routes>
-          <Route path='/about' element={<About />} />
+          <Route path='/about' element={<About mode={mode} />} />
 
 
           <Route path='/' element={<TextForm heading="Please Enter the text" showAlert={showAlert} mode={mode} />} />
