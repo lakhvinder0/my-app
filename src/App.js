@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import './App.css';
-import About from './components/About';
+// import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-import {
-  HashRouter as Router,
-  Route,
-  Routes
-} from "react-router-dom";
+// import {
+//   HashRouter as Router,
+//   Route,
+//   Routes
+// } from "react-router-dom";
 
 
 function App() {
@@ -42,19 +42,15 @@ function App() {
   }
   return (
     <>
-<Router>
+{/* <Router> */}
       <Navbar title="DIgitech Computers" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className='container my-3'>
-        <Routes>
-          <Route path='/about' exact element={<About mode={mode} />} />
-
-
-          <Route path='/' exact element={<TextForm heading="Please Enter the text" showAlert={showAlert} mode={mode} />} />
-
-        </Routes>
+        
+        <TextForm heading="Please Enter the text" showAlert={showAlert} mode={mode} />
+        
       </div>
-      </Router>
+      {/* </Router> */}
 
     </>
   );
